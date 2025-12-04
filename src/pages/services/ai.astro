@@ -1,0 +1,123 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import { Navbar } from '../../components/Navbar';
+import { Contact } from '../../components/Contact';
+import Footer from '../../components/Footer.astro';
+import { ArrowLeft, Check, Bot, Workflow, Brain, Sparkles, ArrowRight } from 'lucide-react';
+---
+
+<Layout title="IA & Data - AGWS" description="Automatisation intelligente et intégration d'IA générative pour votre entreprise.">
+  <Navbar client:load />
+  
+  <main class="bg-agws-black min-h-screen pt-32">
+    
+    {/* HERO SECTION */}
+    <section class="container mx-auto px-6 mb-24 text-center">
+      <a href="/#services" class="inline-flex items-center gap-2 text-gray-500 hover:text-white transition-colors mb-8 font-mono text-xs uppercase tracking-widest">
+        <ArrowLeft size={14} /> Retour aux services
+      </a>
+      
+      <div class="inline-flex items-center gap-3 px-4 py-2 bg-white/5 border border-white mb-8 mx-auto">
+        <Bot size={16} className="text-white" />
+        <span class="text-xs font-mono tracking-widest text-white uppercase">Module IA_V1.0</span>
+      </div>
+
+      <h1 class="text-4xl md:text-6xl font-bold font-mono mb-6 text-white">
+        INTELLIGENCE ARTIFICIELLE <br/>
+        <span class="text-gray-500">& AUTOMATISATION</span>
+      </h1>
+      
+      <p class="text-gray-400 max-w-2xl mx-auto text-lg leading-relaxed mb-12">
+        Ne travaillez plus dur, travaillez intelligemment. 
+        Nous déployons des agents autonomes et des workflows automatisés pour multiplier votre productivité.
+      </p>
+    </section>
+
+    {/* OPTION 1 - AUTOMATISATION */}
+    <section class="py-24 border-t border-white/10 relative overflow-hidden">
+      <div class="absolute inset-0 bg-white/5 skew-y-3 transform origin-top-left scale-110 z-0 pointer-events-none"></div>
+      
+      <div class="container mx-auto px-6 relative z-10 grid md:grid-cols-2 gap-12 items-center">
+        <div class="order-2 md:order-1">
+          <div class="inline-flex items-center gap-2 px-3 py-1 border border-white/20 text-xs font-mono mb-6 bg-black text-white">
+            <span class="w-2 h-2 bg-white rounded-full"></span>
+            OPTION_01
+          </div>
+          <h2 class="text-5xl font-bold font-mono mb-2 text-white">AUTOMATISATION</h2>
+          <h3 class="text-2xl font-mono text-gray-400 mb-8">WORKFLOWS & PROCESS</h3>
+          
+          <p class="text-gray-400 text-lg leading-relaxed mb-8">
+            Connectez vos applications entre elles. Fini la saisie manuelle. 
+            Nous créons des pipelines invisibles qui traitent vos leads, factures et emails 24/7.
+          </p>
+
+          <ul class="space-y-4 mb-10 text-sm font-mono text-gray-300">
+            <li class="flex gap-4 items-center"><Check size={18} className="text-white" /> CRM & Email Marketing Automatisé</li>
+            <li class="flex gap-4 items-center"><Check size={18} className="text-white" /> Synchronisation de Données</li>
+            <li class="flex gap-4 items-center"><Check size={18} className="text-white" /> Gestion de Facturation</li>
+            <li class="flex gap-4 items-center"><Check size={18} className="text-white" /> Alertes & Notifications</li>
+          </ul>
+
+          <a href="#contact" class="inline-block px-8 py-4 bg-white text-black font-bold font-mono text-sm uppercase hover:bg-gray-200 transition-colors tracking-widest">
+            AUTOMATISER MON BUSINESS
+          </a>
+        </div>
+
+        <div class="order-1 md:order-2 flex justify-center relative">
+          <div class="relative w-full max-w-md aspect-square bg-agws-black border border-white/10 p-8 flex items-center justify-center group hover:border-white transition-colors">
+            <Workflow size={128} strokeWidth={0.5} className="text-white opacity-80 group-hover:scale-110 transition-transform duration-500" />
+            <div class="absolute -bottom-6 -right-6 font-mono text-[10rem] font-bold text-white/5 select-none pointer-events-none">
+              AUTO
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    {/* OPTION 2 - IA GENERATIVE */}
+    <section class="py-24 border-t border-white/10 bg-agws-black relative">
+      <div class="container mx-auto px-6 grid md:grid-cols-2 gap-12 items-center">
+        
+        <div class="flex justify-center relative">
+           <div class="relative w-full max-w-md aspect-square bg-white/5 border border-white/10 p-8 flex items-center justify-center group">
+            <Brain size={128} strokeWidth={0.5} className="text-white opacity-80 group-hover:rotate-12 transition-transform duration-500" />
+            <div class="absolute -bottom-6 -left-6 font-mono text-[10rem] font-bold text-white/5 select-none pointer-events-none">
+              AI
+            </div>
+          </div>
+        </div>
+
+        <div>
+          <div class="inline-flex items-center gap-2 px-3 py-1 bg-white text-black text-xs font-mono mb-6 font-bold">
+            <span class="w-2 h-2 bg-black rounded-full animate-pulse"></span>
+            OPTION_02
+          </div>
+          <h2 class="text-5xl font-bold font-mono mb-2 text-white">IA GÉNÉRATIVE</h2>
+          <h3 class="text-2xl font-mono text-gray-400 mb-8">LLM & AGENTS CUSTOM</h3>
+          
+          <p class="text-gray-400 text-lg leading-relaxed mb-8">
+            Intégrez la puissance de GPT | Claude | Gemini dans votre entreprise. 
+            Agents de support client, analyseurs de documents juridiques ou générateurs de contenu sur-mesure.
+          </p>
+
+          <ul class="space-y-4 mb-10 text-sm font-mono text-gray-300">
+            <li class="flex gap-4 items-center"><Check size={18} className="text-white" /> Chatbots Intelligents (RAG)</li>
+            <li class="flex gap-4 items-center"><Check size={18} className="text-white" /> Analyse de Documents & Data</li>
+            <li class="flex gap-4 items-center"><Check size={18} className="text-white" /> Assistants Virtuels Personnalisés</li>
+            <li class="flex gap-4 items-center"><Check size={18} className="text-white" /> Génération de Contenu Automatique</li>
+          </ul>
+
+          <a href="#contact" class="inline-block px-8 py-4 bg-transparent text-white font-bold font-mono text-sm uppercase hover:bg-white hover:text-black transition-colors tracking-widest border border-white">
+            DÉPLOYER UNE IA
+          </a>
+        </div>
+
+      </div>
+    </section>
+
+    <Contact client:visible />
+  </main>
+  
+  <Footer />
+</Layout>
+

@@ -1,0 +1,128 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import { Navbar } from '../../components/Navbar';
+import { Contact } from '../../components/Contact';
+import Footer from '../../components/Footer.astro';
+import { ArrowLeft, Check, Code, Globe, Laptop } from 'lucide-react';
+---
+
+<Layout title="Développement Web - AGWS" description="Création de sites vitrines haute performance et applications web complexes (SaaS).">
+  <Navbar client:load />
+  
+  <main class="bg-agws-black min-h-screen pt-32">
+    
+    {/* HERO SECTION */}
+    <section class="container mx-auto px-6 mb-24 text-center">
+      <a href="/#services" class="inline-flex items-center gap-2 text-gray-500 hover:text-white transition-colors mb-8 font-mono text-xs uppercase tracking-widest">
+        <ArrowLeft size={14} /> Retour aux services
+      </a>
+      
+      <div class="inline-flex items-center gap-3 px-4 py-2 bg-white/5 border border-white mb-8 mx-auto">
+        <Globe size={16} className="text-white" />
+        <span class="text-xs font-mono tracking-widest text-white uppercase">Module Web_V1.0</span>
+      </div>
+
+      <h1 class="text-4xl md:text-6xl font-bold font-mono mb-6 text-white">
+        DÉVELOPPEMENT WEB <br/>
+        <span class="text-gray-500">& ARCHITECTURE SAAS</span>
+      </h1>
+      
+      <p class="text-gray-400 max-w-2xl mx-auto text-lg leading-relaxed mb-12">
+        Nous ne créons pas de simples sites internet. Nous construisons des plateformes numériques performantes, sécurisées et scalables, conçues pour convertir vos visiteurs en clients.
+      </p>
+    </section>
+
+    {/* OFFRE V1 - VITRINE */}
+    <section class="py-24 border-t border-white/10 relative overflow-hidden">
+      <div class="absolute inset-0 bg-white/5 skew-y-3 transform origin-top-left scale-110 z-0 pointer-events-none"></div>
+      
+      <div class="container mx-auto px-6 relative z-10 grid md:grid-cols-2 gap-12 items-center">
+        <div class="order-2 md:order-1">
+          <div class="inline-flex items-center gap-2 px-3 py-1 border border-white/20 text-xs font-mono mb-6 bg-black text-white">
+            <span class="w-2 h-2 bg-white rounded-full"></span>
+            MODULE_01
+          </div>
+          <h2 class="text-5xl font-bold font-mono mb-2 text-white">UNIT V1</h2>
+          <h3 class="text-2xl font-mono text-gray-400 mb-8">SITE VITRINE & LANDING PAGE</h3>
+          
+          <p class="text-gray-400 text-lg leading-relaxed mb-8">
+            L'essentiel pour une présence digitale impactante. 
+            Idéal pour les artisans, consultants et PME souhaitant une vitrine haute performance, 
+            un design sur-mesure et une visibilité immédiate.
+          </p>
+
+          <ul class="space-y-4 mb-10 text-sm font-mono text-gray-300">
+            <li class="flex gap-4 items-center"><Check size={18} className="text-white" /> Design 100% Sur-mesure (No Templates)</li>
+            <li class="flex gap-4 items-center"><Check size={18} className="text-white" /> Performance Score 100/100</li>
+            <li class="flex gap-4 items-center"><Check size={18} className="text-white" /> SEO Technique Optimisé</li>
+            <li class="flex gap-4 items-center"><Check size={18} className="text-white" /> Hébergement sur abonnement & HTTPS Inclus</li>
+          </ul>
+
+          <a href="#contact" class="inline-block px-8 py-4 bg-white text-black font-bold font-mono text-sm uppercase hover:bg-gray-200 transition-colors tracking-widest">
+            INITIALISER UNIT V1
+          </a>
+        </div>
+
+        <div class="order-1 md:order-2 flex justify-center relative">
+          <div class="relative w-full max-w-md aspect-square bg-agws-black border border-white/10 p-8 flex items-center justify-center group hover:border-white transition-colors">
+            <div class="absolute inset-0 bg-[linear-gradient(45deg,transparent_25%,rgba(255,255,255,0.05)_50%,transparent_75%)] bg-[length:250%_250%] animate-[shimmer_3s_infinite]"></div>
+            <Laptop size={128} strokeWidth={0.5} className="text-white opacity-80 group-hover:scale-110 transition-transform duration-500" />
+            
+            {/* Code decorative elements */}
+            <div class="absolute top-4 left-4 w-2 h-2 bg-white rounded-full"></div>
+            <div class="absolute top-4 right-4 w-2 h-2 bg-white rounded-full"></div>
+            <div class="absolute bottom-4 left-4 w-2 h-2 bg-white rounded-full"></div>
+            <div class="absolute bottom-4 right-4 w-2 h-2 bg-white rounded-full"></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    {/* OFFRE V2 - SYSTEM */}
+    <section class="py-24 border-t border-white/10 bg-agws-black relative">
+      <div class="container mx-auto px-6 grid md:grid-cols-2 gap-12 items-center">
+        
+        <div class="flex justify-center relative">
+           <div class="relative w-full max-w-md aspect-square bg-white/5 border border-white/10 p-8 flex items-center justify-center group">
+            <Code size={128} strokeWidth={0.5} className="text-white opacity-80 group-hover:rotate-12 transition-transform duration-500" />
+            <div class="absolute -bottom-6 -right-6 font-mono text-[10rem] font-bold text-white/5 select-none pointer-events-none">
+              V2
+            </div>
+          </div>
+        </div>
+
+        <div>
+          <div class="inline-flex items-center gap-2 px-3 py-1 bg-white text-black text-xs font-mono mb-6 font-bold">
+            <span class="w-2 h-2 bg-black rounded-full animate-pulse"></span>
+            MODULE_02
+          </div>
+          <h2 class="text-5xl font-bold font-mono mb-2 text-white">SYSTEM V2</h2>
+          <h3 class="text-2xl font-mono text-gray-400 mb-8">APPLICATION WEB / SAAS / E-COMMERCE</h3>
+          
+          <p class="text-gray-400 text-lg leading-relaxed mb-8">
+            Une solution complète pour automatiser votre business. 
+            Applications web complexes, espaces membres, paiements en ligne, 
+            tableaux de bord administratifs et traitement de données en temps réel.
+          </p>
+
+          <ul class="space-y-4 mb-10 text-sm font-mono text-gray-300">
+            <li class="flex gap-4 items-center"><Check size={18} className="text-white" /> Architecture Full-Stack (React/Node)</li>
+            <li class="flex gap-4 items-center"><Check size={18} className="text-white" /> Base de Données & API Rest/GraphQL</li>
+            <li class="flex gap-4 items-center"><Check size={18} className="text-white" /> Authentification & Rôles (Admin/User)</li>
+            <li class="flex gap-4 items-center"><Check size={18} className="text-white" /> Paiements (Stripe) & Abonnements</li>
+          </ul>
+
+          <a href="#contact" class="inline-block px-8 py-4 bg-transparent text-white font-bold font-mono text-sm uppercase hover:bg-white hover:text-black transition-colors tracking-widest border border-white">
+            INITIALISER SYSTEM V2
+          </a>
+        </div>
+
+      </div>
+    </section>
+
+    <Contact client:visible />
+  </main>
+  
+  <Footer />
+</Layout>
+

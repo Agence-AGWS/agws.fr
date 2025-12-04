@@ -1,0 +1,37 @@
+---
+import '../styles/global.css';
+import { SecretMode } from '../components/SecretMode';
+import { StatusBar } from '../components/StatusBar';
+import SEO from '../components/SEO.astro';
+
+interface Props {
+	title?: string;
+	description?: string;
+}
+
+const { 
+  title = "AGWS - Architecture Numérique & Intelligence Artificielle", 
+  description = "Agence de développement Web, Mobile et Solutions IA. Nous transformons vos idées en infrastructure numérique robuste et scalable." 
+} = Astro.props;
+---
+
+<!doctype html>
+<html lang="fr" class="dark">
+	<head>
+    <SEO title={title} description={description} />
+    <script is:inline>
+      // Immédiatement vérifier le localStorage pour appliquer le thème sans flash
+      const theme = localStorage.getItem('theme');
+      if (theme === 'light') {
+        document.documentElement.classList.add('light-mode');
+      }
+    </script>
+	</head>
+	<body class="bg-agws-black text-white min-h-screen selection:bg-white selection:text-black pb-8">
+		<SecretMode client:load />
+		<div>
+			<slot />
+		</div>
+		<StatusBar client:only="react" />
+	</body>
+</html>

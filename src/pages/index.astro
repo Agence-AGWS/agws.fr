@@ -1,0 +1,24 @@
+---
+import Layout from '../layouts/Layout.astro';
+import { Navbar } from '../components/Navbar';
+import { Hero } from '../components/Hero';
+import { Services } from '../components/Services';
+import { Process } from '../components/Process';
+import { FAQ } from '../components/FAQ';
+import { Contact } from '../components/Contact';
+import Footer from '../components/Footer.astro';
+---
+
+<Layout title="AGWS - Développement Web, Mobile & Solutions IA">
+	<Navbar client:load />
+	
+	<main>
+		<Hero client:load />
+		<Services client:visible />
+		<Process client:visible />
+		<FAQ client:visible />
+		<Contact client:visible />
+	</main>
+	
+	<Footer />
+</Layout>

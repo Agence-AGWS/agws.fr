@@ -1,0 +1,94 @@
+---
+import Layout from '../layouts/Layout.astro';
+import { Terminal, ArrowLeft } from 'lucide-react';
+---
+
+<Layout title="404 - SYSTEM FAILURE" description="Erreur critique. Page introuvable.">
+  <div class="min-h-screen flex flex-col items-center justify-center bg-agws-black relative overflow-hidden">
+    
+    {/* Glitch Noise Overlay */}
+    <div class="absolute inset-0 opacity-10 bg-[url('https://assets.iceable.com/img/noise-transparent.png')] animate-pulse pointer-events-none"></div>
+
+    <div class="relative z-10 text-center px-6">
+      <div className="inline-flex items-center gap-3 px-4 py-2 bg-white/5 border border-white mb-8">
+        <Terminal size={16} className="text-white" />
+        <span className="text-xs font-mono tracking-widest text-red-500 uppercase animate-pulse">CRITICAL ERROR</span>
+      </div>
+
+      <h1 class="text-8xl md:text-9xl font-bold font-mono mb-4 tracking-tighter text-white glitch-text" data-text="404">
+        404
+      </h1>
+
+      <div class="h-px w-full max-w-xs bg-white/20 mx-auto my-8"></div>
+
+      <h2 class="text-xl md:text-2xl font-mono text-white mb-4">
+        SYSTEM_FAILURE: SECTOR_NOT_FOUND
+      </h2>
+      
+      <p class="text-gray-400 font-mono text-sm mb-12 max-w-md mx-auto leading-relaxed">
+        L'URL demandée ne correspond à aucune adresse mémoire valide.
+        Le système a interrompu l'opération.
+      </p>
+
+      <a 
+        href="/"
+        class="inline-flex items-center gap-3 px-8 py-4 bg-white text-black font-mono font-bold uppercase tracking-widest hover:bg-gray-200 transition-all"
+      >
+        <ArrowLeft size={16} />
+        REBOOT_SYSTEM (HOME)
+      </a>
+    </div>
+
+    {/* Decorative Code */}
+    <div class="absolute bottom-10 left-10 font-mono text-[10px] text-white/20 hidden md:block text-left">
+      Error: 0x800404<br/>
+      Process terminated unexpectedly.<br/>
+      Memory dump saved to /dev/null
+    </div>
+  </div>
+</Layout>
+
+<style>
+  .glitch-text {
+    position: relative;
+  }
+  .glitch-text::before,
+  .glitch-text::after {
+    content: attr(data-text);
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+  }
+  .glitch-text::before {
+    left: 2px;
+    text-shadow: -1px 0 red;
+    clip: rect(24px, 550px, 90px, 0);
+    animation: glitch-anim-2 3s infinite linear alternate-reverse;
+  }
+  .glitch-text::after {
+    left: -2px;
+    text-shadow: -1px 0 blue;
+    clip: rect(85px, 550px, 140px, 0);
+    animation: glitch-anim 2.5s infinite linear alternate-reverse;
+  }
+
+  @keyframes glitch-anim {
+    0% { clip: rect(12px, 9999px, 28px, 0); }
+    20% { clip: rect(78px, 9999px, 14px, 0); }
+    40% { clip: rect(14px, 9999px, 73px, 0); }
+    60% { clip: rect(55px, 9999px, 12px, 0); }
+    80% { clip: rect(24px, 9999px, 88px, 0); }
+    100% { clip: rect(33px, 9999px, 5px, 0); }
+  }
+  @keyframes glitch-anim-2 {
+    0% { clip: rect(55px, 9999px, 78px, 0); }
+    20% { clip: rect(10px, 9999px, 15px, 0); }
+    40% { clip: rect(88px, 9999px, 12px, 0); }
+    60% { clip: rect(12px, 9999px, 55px, 0); }
+    80% { clip: rect(24px, 9999px, 33px, 0); }
+    100% { clip: rect(9px, 9999px, 88px, 0); }
+  }
+</style>
+

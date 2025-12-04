@@ -1,0 +1,132 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;700&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --color-agws-black: #000001;
+  --color-agws-dark: #0a0a0b;
+  --color-matrix-green: #00ff41;
+  
+  --font-sans: 'Inter', sans-serif;
+  --font-mono: 'JetBrains Mono', monospace;
+
+  @keyframes scan {
+    0% { top: -100%; }
+    100% { top: 100%; }
+  }
+  
+  @keyframes grain {
+    0%, 100% { transform: translate(0, 0); }
+    10% { transform: translate(-5%, -10%); }
+    20% { transform: translate(-15%, 5%); }
+    30% { transform: translate(7%, -25%); }
+    40% { transform: translate(-5%, 25%); }
+    50% { transform: translate(-15%, 10%); }
+    60% { transform: translate(15%, 0%); }
+    70% { transform: translate(0%, 15%); }
+    80% { transform: translate(3%, 35%); }
+    90% { transform: translate(-10%, 10%); }
+  }
+}
+
+@layer base {
+  html {
+    @apply bg-agws-black text-white scroll-smooth;
+    font-family: var(--font-sans);
+  }
+  
+  body {
+    @apply antialiased overflow-x-hidden bg-agws-black transition-colors duration-500;
+  }
+
+  /* Custom Scrollbar - Mono */
+  ::-webkit-scrollbar {
+    width: 4px;
+  }
+  ::-webkit-scrollbar-track {
+    @apply bg-agws-black;
+  }
+  ::-webkit-scrollbar-thumb {
+    @apply bg-white rounded-none; 
+  }
+  ::-webkit-scrollbar-thumb:hover {
+    @apply bg-gray-400;
+  }
+}
+
+/* Noise Texture Class */
+.bg-noise {
+  position: fixed;
+  top: -50%;
+  left: -50%;
+  right: -50%;
+  bottom: -50%;
+  width: 200%;
+  height: 200vh;
+  background: transparent url('http://assets.iceable.com/img/noise-transparent.png') repeat 0 0;
+  background-repeat: repeat;
+  animation: grain 8s steps(10) infinite;
+  opacity: 0.03;
+  z-index: 0;
+  pointer-events: none;
+}
+
+/* White Selection */
+::selection {
+  @apply bg-white text-black;
+}
+
+/* MATRIX MODE OVERRIDES */
+html.matrix-mode {
+  & body {
+    @apply bg-black;
+  }
+  
+  & * {
+    border-color: var(--color-matrix-green) !important;
+    color: var(--color-matrix-green) !important;
+    text-shadow: 0 0 5px rgba(0, 255, 65, 0.5);
+  }
+
+  & .bg-white {
+    background-color: var(--color-matrix-green) !important;
+    color: black !important;
+    text-shadow: none !important;
+  }
+
+  & img {
+    filter: grayscale(100%) brightness(0.8) sepia(100%) hue-rotate(50deg) saturate(500%) !important;
+  }
+
+  & ::selection {
+    background-color: var(--color-matrix-green) !important;
+    color: black !important;
+  }
+
+  & ::-webkit-scrollbar-thumb {
+    background-color: var(--color-matrix-green) !important;
+  }
+}
+
+/* INFRA VISION MODE */
+html.infra-mode {
+  & * {
+    outline: 1px dashed rgba(0, 150, 255, 0.5) !important;
+  }
+  & div:hover {
+    outline: 1px solid rgba(0, 150, 255, 1) !important;
+    background-color: rgba(0, 150, 255, 0.05) !important;
+    cursor: crosshair !important;
+  }
+}
+
+/* LIGHT MODE (Architect View) */
+html.light-mode {
+  filter: invert(1) hue-rotate(180deg);
+}
+
+/* Empêcher l'inversion des images et vidéos pour qu'elles restent normales */
+html.light-mode img,
+html.light-mode video,
+html.light-mode .no-invert {
+  filter: invert(1) hue-rotate(180deg);
+}

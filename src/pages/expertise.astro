@@ -1,0 +1,113 @@
+---
+import Layout from '../layouts/Layout.astro';
+import { Navbar } from '../components/Navbar';
+import { Contact } from '../components/Contact';
+import Footer from '../components/Footer.astro';
+import { Target, Shield, Zap, Award } from 'lucide-react';
+---
+
+<Layout title="Expertise & Agence - AGWS" description="Découvrez la vision d'AGWS : Une approche chirurgicale du développement numérique.">
+  <Navbar client:load />
+  
+  <main class="bg-agws-black min-h-screen pt-32">
+    
+    {/* HERO SECTION - MANIFESTO STYLE */}
+    <section class="container mx-auto px-6 mb-24 text-center">
+      <div class="inline-flex items-center gap-3 px-4 py-2 bg-white/5 border border-white mb-8 mx-auto">
+        <Target size={16} className="text-white" />
+        <span class="text-xs font-mono tracking-widest text-white uppercase">Vision_2026 - 2028
+        </span>
+      </div>
+
+      <h1 class="text-5xl md:text-7xl font-bold font-mono mb-8 text-white leading-tight">
+        PAS DE MAGIE.<br/>
+        <span class="text-gray-500">JUSTE DU CODE.</span>
+      </h1>
+      
+      <p class="text-gray-400 max-w-3xl mx-auto text-xl leading-relaxed mb-12 font-light">
+        AGWS est née d'un constat simple : le web est devenu lent, complexe et fragile.
+        Notre mission est de restaurer la performance et la simplicité grâce à une ingénierie rigoureuse.
+      </p>
+    </section>
+
+    {/* VALEURS - GRID */}
+    <section class="py-24 border-t border-white/10 relative">
+      <div class="absolute inset-0 bg-[linear-gradient(rgba(255,255,255,0.03)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.03)_1px,transparent_1px)] bg-[size:40px_40px] pointer-events-none"></div>
+      
+      <div class="container mx-auto px-6 relative z-10">
+        <div class="grid md:grid-cols-3 gap-12">
+          
+          <div class="bg-black border border-white/10 p-8 hover:border-white transition-colors group">
+            <Zap size={48} strokeWidth={1} className="text-white mb-6 group-hover:scale-110 transition-transform" />
+            <h3 class="text-2xl font-bold font-mono mb-4 text-white">VITESSE ABSOLUE</h3>
+            <p class="text-gray-400 text-sm leading-relaxed">
+              Nous optimisons chaque milliseconde. Pas de builders lourds
+              Que du code pur, compilé et servi à la vitesse de la lumière via des CDN globaux.
+            </p>
+          </div>
+
+          <div class="bg-black border border-white/10 p-8 hover:border-white transition-colors group">
+            <Shield size={48} strokeWidth={1} className="text-white mb-6 group-hover:scale-110 transition-transform" />
+            <h3 class="text-2xl font-bold font-mono mb-4 text-white">SÉCURITÉ PAR DESIGN</h3>
+            <p class="text-gray-400 text-sm leading-relaxed">
+              La sécurité n'est pas une option. Architectures isolées, chiffrement de bout en bout, 
+              et respect strict des normes RGPD. Vos données sont des forteresses.
+            </p>
+          </div>
+
+          <div class="bg-black border border-white/10 p-8 hover:border-white transition-colors group">
+            <Award size={48} strokeWidth={1} className="text-white mb-6 group-hover:scale-110 transition-transform" />
+            <h3 class="text-2xl font-bold font-mono mb-4 text-white">EXCELLENCE TECH</h3>
+            <p class="text-gray-400 text-sm leading-relaxed">
+              Nous utilisons les outils de demain, aujourd'hui. IA générative, Edge Computing, 
+              Serverless. Nous ne suivons pas les tendances, nous les implémentons.
+            </p>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    {/* LE FONDATEUR / L'AGENCE */}
+    <section class="py-24 border-t border-white/10 bg-white/5">
+      <div class="container mx-auto px-6 max-w-5xl flex flex-col md:flex-row gap-16 items-center">
+        
+    
+        <div class="w-full md:w-1/2">
+          <h2 class="text-4xl font-bold font-mono mb-6 text-white">ALEXANDRE GROSSE</h2>
+          <h3 class="text-xl font-mono text-gray-400 mb-8 border-l-2 border-white pl-4">ARCHITECTE NUMÉRIQUE</h3>
+          
+          <div class="space-y-6 text-gray-300 leading-relaxed font-light">
+            <p>
+              "J'ai fondé AGWS avec une idée radicale : apporter la qualité d'ingénierie des géants de la Tech aux entreprises ambitieuses."
+            </p>
+            <p>
+              Dans un monde saturé de solutions génériques, je crois à la puissance du sur-mesure. 
+              Chaque ligne de code que nous écrivons a un but précis : faire croître votre activité.
+            </p>
+            <p>
+              Basés en région parisienne, nous opérons avec la précision d'une horloge et la puissance d'un datacenter.
+            </p>
+          </div>
+
+          <div class="mt-12 pt-8 border-t border-white/10 grid grid-cols-2 gap-8">
+             <div>
+                <span class="block text-3xl font-bold text-white mb-1">96%</span>
+                <span class="text-xs font-mono text-gray-500 uppercase">Satisfaction Client</span>
+             </div>
+             <div>
+                <span class="block text-3xl font-bold text-white mb-1">24/7</span>
+                <span class="text-xs font-mono text-gray-500 uppercase">Monitoring Infra</span>
+             </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <Contact client:visible />
+  </main>
+  
+  <Footer />
+</Layout>
+
