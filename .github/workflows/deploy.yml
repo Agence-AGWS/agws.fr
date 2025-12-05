@@ -1,0 +1,19 @@
+name: Deploy to VPS
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Call deploy hook on VPS
+        run: |
+          curl -X POST http://51.91.102.9:9000/deploy \
+            -H "Content-Type: application/json" \
+            -d '{
+              "secret": "${{ secrets.DEPLOY_SECRET }}",
+              "project": "agws"
+            }'
